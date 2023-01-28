@@ -1,22 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
+import {MiPrimerEstado} from './Components/MiPrimerEstado';
+import {ComponenteTaller} from './Components/ComponenteTaller';
 
 function App() {
+  const fecha = new Date();
+  const anoActual = fecha.getFullYear();
+  console.log(anoActual); //2022
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <h1>El estado en React - Hook useState</h1>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          <MiPrimerEstado/>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>
+          <ComponenteTaller
+            anoActual={anoActual}
+          />
+        </p>
       </header>
     </div>
   );
